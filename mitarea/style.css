@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;1,200;1,300;1,400&display=swap');
+
+*{
+    font-family: "Titillium Web";
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* INICIO */
+.inicio{
+    background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)),
+    url("fondo.jpg");
+    background-size: cover;
+    background-position: center center;
+    color: white ;
+}
+
+.inicio .contenido-seccion{
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.inicio .contenido-seccion header{
+    padding: 30px;
+}
+
+.inicio .contenido-seccion header nav{
+    position: fixed;
+    margin-left: 60px;
+    background-color:#D4A190;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    z-index: 99;
+    display:none ;
+}
+
+.inicio .contenido-seccion header nav a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+
+.inicio .contenido-seccion header .nav-bar{
+    position: fixed;
+    background-color: #D4A190;
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    line-height: 50px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.inicio .contenido-seccion header .nav-bar:hover{
+    box-shadow: 0 0 35px white;
+}
+
+.inicio .contenido-seccion .info{
+    padding-bottom: 130px;
+}
+
+.inicio .contenido-seccion .info h1{
+    font-size: 3rem;
+    letter-spacing: 5px;
+}
+
+.inicio .contenido-seccion .info h2{
+    font-size: 2rem;
+    letter-spacing: 2px;
+}
+
+.inicio .contenido-seccion .info .redes{
+    margin: 20px 0;
+}
+.inicio .contenido-seccion .info .redes a{
+    display: inline-block;
+    text-decoration: none;
+    background-color: black;
+    color: #D4A190;
+    border: 1px solid #D4A190;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 5px;
+    transition: .3s;
+}
+
+.inicio .contenido-seccion .info .redes a:hover{
+    color: white;
+    background-color: #D4A190;
+    box-shadow: 0 0 20px white;
+}
+
+.inicio .contenido-seccion .foto{
+    position: relative;
+}
+.inicio .contenido-seccion .foto img{
+    max-width: 200px;
+    border-radius: 50%;
+    border: 5px solid #D4A190;
+    position: absolute;
+    left: 50%;
+    top: 30px;
+    transform: translateX(-50%);
+}
