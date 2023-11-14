@@ -14,9 +14,9 @@
         $data = htmlspecialchars($data);
         return $data;
     }
-    $id = $_SESSION['id'];
+    $id = $_SESSION['usuario_id'];
 
-    $Sql2 ="UPDATE usuarios SET ultima_conexion = NOW() WHERE id=" . $_SESSION['id'];
+    $Sql2 ="UPDATE usuarios SET ultima_conexion = NOW() WHERE usuario_id=" . $_SESSION['usuario_id'];
     mysqli_query($conexion, $Sql2);
 
 

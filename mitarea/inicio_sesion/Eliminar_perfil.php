@@ -13,9 +13,9 @@ if (!isset($_SESSION['Usuario'])) {
         return $data;
     }
     
-    $id = $_SESSION['id'];
+    $id = $_SESSION['usuario_id'];
 
-    $Sql ="DELETE FROM usuarios WHERE id ='$id' ";
+    $Sql ="DELETE FROM usuarios WHERE usuario_id ='$id' ";
     $result = mysqli_query($conexion, $Sql);
     header("Location: CerrarSesion.php");
     

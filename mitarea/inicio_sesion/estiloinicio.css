@@ -1,0 +1,28 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: black;
+    font-family: 'calibri';
+    text-align: center;
+}
+
+header {
+    background-color: cyan;
+    height: 100px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: left;
+}
+
+section h1 {
+    font-size: 30px;
+}
+
+section h2{
+    font-size: 50px;
+}

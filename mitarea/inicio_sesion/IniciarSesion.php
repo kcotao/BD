@@ -34,7 +34,7 @@ if (isset($_POST['Usuario']) && isset($_POST['Contraseña'])){
                 $_SESSION['Usuario'] = $row['Usuario'];
                 $_SESSION['Correo'] = $row['Correo'];
                 $_SESSION['Nombre_Completo'] = $row['Nombre_Completo'];
-                $_SESSION['id'] = $row['id'];
+                $_SESSION['usuario_id'] = $row['usuario_id'];
                 $_SESSION['Num_almuerzos']=$row['Num_almuerzos'];
                 $_SESSION['ultima_conexion']=$row['ultima_conexion'];
                 header("Location: Inicio.php");

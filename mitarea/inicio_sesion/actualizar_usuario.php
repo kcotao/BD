@@ -14,13 +14,13 @@ function validate($data){
 }
 
 $Nuevo_usuario = validate($_POST['Nuevo_usuario']);
-$id = $_SESSION['id'];
+$id = $_SESSION['usuario_id'];
 
 if (empty($Nuevo_usuario)){
     header('Location: Actualizar_perfil.php?error= El nuevo usuario es requerido');
     exit();
 } else {
-    $Sql ="UPDATE usuarios SET Usuario = '$Nuevo_usuario' Where id ='$id' ";
+    $Sql ="UPDATE usuarios SET Usuario = '$Nuevo_usuario' Where usuario_id ='$id' ";
     $result = mysqli_query($conexion, $Sql);
     header("Location: CerrarSesion.php");
 }

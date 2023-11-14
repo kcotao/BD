@@ -5,6 +5,8 @@ if (!isset($_SESSION['Usuario'])) {
     header("Location: IniciarSesion.php");
     exit();
 }
+$id = $_SESSION['usuario_id'];
+$Usuario= $_SESSION['Usuario'];
 
 ?>
 
@@ -12,33 +14,59 @@ if (!isset($_SESSION['Usuario'])) {
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <meta name="viewsport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Almuerzos</title>
+    <link rel="stylesheet" href="estiloAlmuerzos.css">
 </head>
+<header>
+    <section>
+    <h1><?php echo $Usuario ?></h1>
+    </section>
+    <a href="CerrarSesion.php">Cerrar Sesion</a>
+    <a href="Perfil.php">Volver</a>
+</header>
+<br>
+<h1> Aca tienes una lista de todas las recetas disponibles en la USM</h1>
+<br>
 <body>
-    <?php
+    <table>
+        <tr>
+            <th>Tipo</th>
+            <th>Receta</th>
+            <th>Tiempo preparacion</th>
+            <th>Ver detalle</th>
+        </tr>
+        <?php
 
-    $Sql = "SELECT nombre_almuerzo, ingredientes FROM almuerzos";
-    $result = mysqli_query($conexion, $Sql);
-    
-    if ($result) {
-        // Itera a través de los resultados y muestra los valores
-        while ($row = mysqli_fetch_assoc($result)) {
-            $nombre_almuerzo = $row['nombre_almuerzo'];
-            $ingredientes = $row['ingredientes'];
-            
-            // Muestra los valores
-            echo "Nombre del almuerzo: $nombre_almuerzo<br>";
-            echo "Ingredientes: $ingredientes<br><br>";
+        $Sql = "SELECT tipo, nombre, id_rec, tiempo_prep FROM recetas
+        ORDER BY tipo DESC";
+        $result = mysqli_query($conexion, $Sql);
+
+        if ($result) {
+            // Itera a través de los resultados y muestra los valores
+            while ($row = mysqli_fetch_assoc($result)) {
+                $nombre_receta = $row['nombre'];
+                $tipo = $row['tipo'];
+                $tiempo = $row['tiempo_prep'];
+                $id_rec = $row['id_rec'];
+                ?>
+                <tr>
+                    <td><?php echo $tipo; ?></td>
+                    <td><?php echo $nombre_receta; ?></td>
+                    <td><?php echo $tiempo; ?></td>
+                    <td>
+                        <a href="recetas/<?php echo $nombre_receta?>.php">Ir a pagina</a>    
+                    </td>
+                </tr>
+                <?php
+            }
+        } else {
+            echo "La consulta salió mal";
         }
-    } else{
-        echo "La consulta salio mal";
-    }
+        ?>
+    </table>
 
-    ?>
-    <a href="Inicio.php">Volver</a>
+    <br>
+    <br>
 </body>
 </html>

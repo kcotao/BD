@@ -1,3 +1,17 @@
+
+table {
+    border: 1px solid black;
+    width: 800px;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    width: 50px;
+    background-color: #96D4D4;
+    text-align: center; /* Alineación del texto a la izquierda */
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #FFC0CB;

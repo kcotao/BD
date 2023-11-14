@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: black;
+    font-family: 'calibri';
+    text-align: center;
+}
+
+header {
+    background-color: cyan;
+    height: 100px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: left;
+}
+
+table {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+th {
+    background-color: #04AA6D;
+    color: white;
+    padding: 15px;
+    font-size: 20px;
+}
+
+td {
+    padding: 15px;
+    width: 200px;
+    text-align: center; /* Alineación del texto a la izquierda */
+}
+
+/* Estilo para filas pares */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Estilo para filas impares */
+tr:nth-child(odd) {
+    background-color: #d3d3d3; /* Puedes cambiar este color según tus preferencias */
+}

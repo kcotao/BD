@@ -17,7 +17,7 @@ function validate($data){
 
 $Nueva_contraseña = validate($_POST['Nueva_contraseña']);
 $RContraseña = validate($_POST['RContraseña']);
-$id = $_SESSION['id'];
+$id = $_SESSION['usuario_id'];
 
 if (empty($Nueva_contraseña)){
     header("Location: Actualizar_perfil.php?error=La nueva contraseña es requerido");
@@ -29,7 +29,7 @@ if (empty($Nueva_contraseña)){
     header("Location: Actualizar_perfil.php?error=Las contraseñas deben coincidir");
     exit();
 } else {
-    $Sql ="UPDATE usuarios SET Contraseña = '$Nueva_contraseña' Where id ='$id' ";
+    $Sql ="UPDATE usuarios SET Contraseña = '$Nueva_contraseña' Where usuario_id ='$id' ";
     $result = mysqli_query($conexion, $Sql);
     header("Location: CerrarSesion.php");
 }

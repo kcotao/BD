@@ -14,13 +14,13 @@ function validate($data){
 }
 
 $Nuevo_correo = validate($_POST['Nuevo_correo']);
-$id = $_SESSION['id'];
+$id = $_SESSION['usuario_id'];
 
 if (empty($Nuevo_correo)){
     header('Location: Actualizar_perfil.php?error= El nuevo correo es requerido');
     exit();
 } else {
-    $Sql ="UPDATE usuarios SET Correo = '$Nuevo_correo' Where id ='$id' ";
+    $Sql ="UPDATE usuarios SET Correo = '$Nuevo_correo' Where usuario_id ='$id' ";
     $result = mysqli_query($conexion, $Sql);
     header("Location: CerrarSesion.php");
 }
